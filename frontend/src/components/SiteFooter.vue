@@ -16,21 +16,29 @@ const links = computed(() => [
   { to: '/formations', label: t('nav.programs') },
   { to: '/calendrier', label: t('nav.calendar') },
   { to: '/entreprises', label: t('nav.enterprise') },
-  { to: '/actualites', label: t('nav.news') },
   { to: '/contact', label: t('nav.contact') },
 ])
 </script>
 
 <template>
-  <footer class="bg-navy text-white">
+  <footer class="mt-auto bg-navy text-white">
     <div class="container-page grid gap-10 py-16 md:grid-cols-4">
       <div class="md:col-span-2">
-        <p class="font-display text-3xl">Acad’Emy</p>
-        <p class="mt-2 text-gold">Learn. Build. Lead.</p>
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white">
+            <img src="/images/academy-mark.jpg" alt="" class="h-10 w-10 object-contain" />
+          </span>
+          <p class="font-display text-3xl">Acad’Emy</p>
+        </div>
         <p class="mt-4 max-w-md text-sm leading-relaxed text-white/70">
           {{ t('promiseLong') }}
         </p>
-        <p class="mt-4 text-xs uppercase tracking-[0.18em] text-white/40">{{ t('parent') }}</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="rounded-md bg-white px-2 py-1">
+            <img src="/images/lawapp-logo.jpg" alt="LawApp50 Group" class="h-10 w-auto object-contain" />
+          </span>
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">{{ t('parent') }}</p>
+        </div>
       </div>
       <div>
         <p class="eyebrow text-gold">Menu</p>

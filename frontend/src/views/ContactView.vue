@@ -30,6 +30,7 @@ async function submit() {
     <SectionTitle :title="t('contact.title')" :lead="t('contact.lead')" />
     <div class="mt-12 grid gap-10 lg:grid-cols-2">
       <div class="space-y-5">
+        <img src="/images/gallery-03.jpg" alt="" class="h-44 w-full rounded-2xl object-cover shadow-soft" />
         <article class="rounded-2xl bg-white p-6 shadow-soft">
           <p class="eyebrow">{{ t('contact.phone') }}</p>
           <a :href="`tel:${catalog.contact.phone}`" class="mt-2 block text-lg">{{ catalog.contact.phone }}</a>

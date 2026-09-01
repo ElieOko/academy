@@ -32,7 +32,10 @@ async function submit() {
   <main class="pb-24 pt-28">
     <div class="container-page">
       <SectionTitle :title="t('enterprise.title')" :lead="t('enterprise.lead')" />
-      <p v-reveal class="mt-8 max-w-3xl text-lg leading-relaxed text-navy">{{ t('enterprise.intro') }}</p>
+      <div class="mt-8 grid items-center gap-8 lg:grid-cols-2">
+        <p v-reveal class="max-w-3xl text-lg leading-relaxed text-navy">{{ t('enterprise.intro') }}</p>
+        <img v-reveal="80" src="/images/back-02.jpg" alt="" class="h-56 w-full rounded-2xl object-cover shadow-soft lg:h-64" />
+      </div>
       <div class="mt-12 grid gap-6 md:grid-cols-3">
         <article v-for="n in 3" :key="n" v-reveal="n * 70" class="rounded-2xl bg-white p-6 shadow-soft">
           <p class="font-display text-3xl text-gold">0{{ n }}</p>
@@ -75,7 +78,7 @@ async function submit() {
             <label class="field text-white/60">{{ t('enterprise.message') }}</label>
             <textarea v-model="form.message" rows="4" class="bg-white/5 text-white" />
           </div>
-          <button class="btn btn-gold md:col-span-2" :disabled="loading">
+          <button class="btn btn-wine md:col-span-2" :disabled="loading">
             {{ loading ? t('cta.sending') : t('cta.proposal') }}
           </button>
         </form>

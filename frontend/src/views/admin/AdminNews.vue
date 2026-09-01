@@ -70,7 +70,7 @@ async function remove(id: string) {
       <input v-model="form.image_url" placeholder="Image URL" class="md:col-span-2" />
       <label class="flex items-center gap-2 text-sm"><input v-model="form.is_published" type="checkbox" class="w-auto" /> Publié</label>
       <div class="flex gap-2 md:col-span-2">
-        <button class="btn btn-gold">Enregistrer</button>
+        <button class="btn btn-wine">Enregistrer</button>
         <button type="button" class="btn btn-outline" @click="editing = null">Annuler</button>
       </div>
     </form>

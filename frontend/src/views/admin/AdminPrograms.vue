@@ -117,7 +117,7 @@ async function remove(id: string) {
       <label class="flex items-center gap-2 text-sm"><input v-model="form.is_published" type="checkbox" class="w-auto" /> Publié</label>
       <label class="flex items-center gap-2 text-sm"><input v-model="form.is_featured" type="checkbox" class="w-auto" /> Mis en avant</label>
       <div class="flex gap-2 md:col-span-2">
-        <button class="btn btn-gold">Enregistrer</button>
+        <button class="btn btn-wine">Enregistrer</button>
         <button type="button" class="btn btn-outline" @click="editing = null">Annuler</button>
       </div>
     </form>

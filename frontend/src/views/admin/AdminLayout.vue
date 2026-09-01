@@ -25,7 +25,12 @@ function logout() {
 <template>
   <div class="min-h-screen bg-cream md:flex">
     <aside class="bg-navy p-6 text-white md:w-60 md:shrink-0">
-      <RouterLink to="/" class="font-display text-2xl text-gold">Acad’Emy</RouterLink>
+      <RouterLink to="/" class="flex items-center gap-2">
+        <span class="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-white">
+          <img src="/images/academy-mark.jpg" alt="" class="h-7 w-7 object-contain" />
+        </span>
+        <span class="font-display text-xl text-gold">Acad’Emy</span>
+      </RouterLink>
       <nav class="mt-8 flex flex-col gap-1 text-sm">
         <RouterLink
           v-for="l in links"

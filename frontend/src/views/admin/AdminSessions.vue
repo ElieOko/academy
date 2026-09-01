@@ -139,7 +139,7 @@ async function remove(id: string) {
         <input v-model="form.is_highlighted" type="checkbox" class="w-auto" /> Mettre en avant (accueil)
       </label>
       <div class="flex gap-2 md:col-span-2">
-        <button class="btn btn-gold">Enregistrer</button>
+        <button class="btn btn-wine">Enregistrer</button>
         <button type="button" class="btn btn-outline" @click="editing = null">Annuler</button>
       </div>
     </form>

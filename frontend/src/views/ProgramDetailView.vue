@@ -4,6 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { api } from '../lib/api'
 import { loc, type Locale, type Program } from '../types'
+import { programCover } from '../lib/covers'
 
 const route = useRoute()
 const { t, locale } = useI18n()
@@ -26,7 +27,7 @@ onMounted(async () => {
     <div v-if="error" class="container-page">Formation introuvable.</div>
     <div v-else-if="program">
       <section class="relative h-[42vh] min-h-[280px] overflow-hidden">
-        <img :src="program.image_url" alt="" class="absolute inset-0 h-full w-full object-cover" />
+        <img :src="programCover(program.slug, program.image_url)" alt="" class="absolute inset-0 h-full w-full object-cover" />
         <div class="absolute inset-0 bg-navy/70" />
         <div class="container-page relative flex h-full flex-col justify-end pb-10 text-white">
           <p class="eyebrow text-gold">{{ program.code }}</p>
@@ -69,7 +70,7 @@ onMounted(async () => {
             </article>
           </div>
           <p v-else class="mt-3 text-sm text-mute">{{ t('programs.none') }}</p>
-          <RouterLink to="/inscription" class="btn btn-gold mt-6 w-full">{{ t('cta.enroll') }}</RouterLink>
+          <RouterLink to="/inscription" class="btn btn-wine mt-6 w-full">{{ t('cta.enroll') }}</RouterLink>
         </aside>
       </div>
     </div>

@@ -21,7 +21,6 @@ const links = computed(() => [
   { to: '/formations', label: t('nav.programs') },
   { to: '/calendrier', label: t('nav.calendar') },
   { to: '/entreprises', label: t('nav.enterprise') },
-  { to: '/actualites', label: t('nav.news') },
   { to: '/contact', label: t('nav.contact') },
 ])
 
@@ -43,43 +42,46 @@ watch(
 <template>
   <header
     class="fixed inset-x-0 top-0 z-40 transition-all duration-300"
-    :class="overHero ? 'bg-transparent' : 'bg-cream/90 shadow-sm backdrop-blur-md'"
+    :class="overHero ? 'bg-transparent' : 'bg-cream/95 shadow-sm backdrop-blur-md'"
   >
-    <div class="container-page flex h-[72px] items-center justify-between gap-4">
-      <RouterLink to="/" class="flex items-center gap-2.5">
-        <span
-          class="flex h-9 w-9 items-center justify-center rounded-lg font-display text-lg font-semibold"
-          :class="overHero ? 'bg-gold text-navy' : 'bg-navy text-gold'"
-        >A</span>
-        <span class="leading-tight">
-          <span class="block font-display text-[17px] font-semibold" :class="overHero ? 'text-white' : 'text-navy'">Acad’Emy</span>
-          <span class="block text-[10px] tracking-[0.14em] uppercase" :class="overHero ? 'text-white/70' : 'text-mute'">Learn. Build. Lead.</span>
+    <div class="mx-auto flex h-[68px] max-w-[92rem] items-center gap-3 px-4 md:px-6">
+      <RouterLink to="/" class="flex shrink-0 items-center gap-2.5">
+        <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
+          <img src="/images/academy-mark.jpg" alt="" class="h-9 w-9 object-contain" />
+        </span>
+        <span class="font-display text-[17px] font-semibold leading-none" :class="overHero ? 'text-white' : 'text-navy'">
+          Acad’Emy
         </span>
       </RouterLink>
 
-      <nav class="hidden items-center gap-6 lg:flex">
+      <nav class="hidden min-w-0 flex-1 items-center justify-end gap-x-1 lg:flex lg:justify-center lg:gap-x-2">
         <RouterLink
           v-for="l in links"
           :key="l.to"
           :to="l.to"
-          class="text-[13px] transition hover:text-gold"
-          :class="overHero ? 'text-white/85' : 'text-navy/80'"
+          class="whitespace-nowrap rounded-full px-2.5 py-1.5 text-[12.5px] font-medium transition hover:text-wine"
+          :class="[
+            overHero ? 'text-white/85 hover:text-gold' : 'text-navy/75',
+            route.path === l.to || (l.to !== '/' && route.path.startsWith(l.to)) ? (overHero ? 'text-gold' : 'text-wine') : '',
+          ]"
         >
           {{ l.label }}
         </RouterLink>
       </nav>
 
-      <div class="flex items-center gap-2">
+      <div class="ml-auto flex shrink-0 items-center gap-2 lg:ml-0">
         <button
           type="button"
-          class="rounded-full border px-3 py-1.5 text-[11px] font-semibold tracking-wide"
+          class="flex items-center rounded-full border p-0.5 text-[10px] font-semibold tracking-wide"
           :class="overHero ? 'border-white/30 text-white' : 'border-navy/15 text-navy'"
+          :aria-label="locale === 'fr' ? 'Switch to English' : 'Passer en français'"
           @click="toggleLocale"
         >
-          {{ locale === 'fr' ? 'Français / English' : 'English / Français' }}
+          <span class="rounded-full px-2 py-1" :class="locale === 'fr' ? (overHero ? 'bg-white text-navy' : 'bg-navy text-white') : ''">FR</span>
+          <span class="rounded-full px-2 py-1" :class="locale === 'en' ? (overHero ? 'bg-white text-navy' : 'bg-navy text-white') : ''">EN</span>
         </button>
-        <RouterLink to="/inscription" class="btn btn-gold hidden px-4 py-2 text-xs md:inline-flex">
-          {{ t('cta.enroll') }}
+        <RouterLink to="/inscription" class="btn btn-wine hidden sm:inline-flex">
+          {{ t('cta.enrollShort') }}
         </RouterLink>
         <button class="lg:hidden" :class="overHero ? 'text-white' : 'text-navy'" @click="open = !open">
           <X v-if="open" :size="22" />
@@ -93,7 +95,7 @@ watch(
         <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="py-2.5 text-white/90">
           {{ l.label }}
         </RouterLink>
-        <RouterLink to="/inscription" class="btn btn-gold mt-3">{{ t('cta.enroll') }}</RouterLink>
+        <RouterLink to="/inscription" class="btn btn-wine mt-3">{{ t('cta.enrollShort') }}</RouterLink>
       </nav>
     </div>
   </header>

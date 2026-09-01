@@ -47,7 +47,7 @@ async function save() {
       <input v-model="form.facebook" placeholder="Facebook" />
       <input v-model="form.instagram" placeholder="Instagram" />
       <input v-model="form.linkedin" placeholder="LinkedIn" />
-      <button class="btn btn-gold">Enregistrer</button>
+      <button class="btn btn-wine">Enregistrer</button>
       <p v-if="saved.ok" class="text-sm text-emerald-700">Enregistré.</p>
     </form>
   </div>

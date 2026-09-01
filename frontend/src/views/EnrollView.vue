@@ -133,7 +133,7 @@ async function submit() {
           <RouterLink to="/confidentialite" class="text-navy underline">{{ t('cta.privacy') }}</RouterLink>
         </span>
       </label>
-      <button class="btn btn-gold w-full" :disabled="loading">
+      <button class="btn btn-wine w-full" :disabled="loading">
         {{ loading ? t('cta.sending') : t('enroll.submit') }}
       </button>
     </form>

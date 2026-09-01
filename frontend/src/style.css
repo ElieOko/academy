@@ -5,6 +5,7 @@
 :root {
   --navy: #0b1f36;
   --gold: #c4a35a;
+  --wine: #922b3e;
   --cream: #f6f3ee;
 }
 
@@ -27,6 +28,65 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
+@media (pointer: fine) {
+  html.has-mouse,
+  html.has-mouse body,
+  html.has-mouse a,
+  html.has-mouse button,
+  html.has-mouse [role='button'] {
+    cursor: none;
+  }
+  html.has-mouse input,
+  html.has-mouse textarea,
+  html.has-mouse select {
+    cursor: text;
+  }
+}
+
+.mouse-spot {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.16) 0%, rgba(146, 43, 62, 0.05) 38%, transparent 70%);
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+.mouse-dot {
+  position: absolute;
+  top: -3.5px;
+  left: -3.5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #c4a35a;
+  transition: transform 0.2s ease;
+}
+
+.mouse-ring {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 163, 90, 0.85);
+  transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mouse-ring.is-hover {
+  top: -28px;
+  left: -28px;
+  width: 56px;
+  height: 56px;
+  background: rgba(146, 43, 62, 0.12);
+  border-color: #922b3e;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -43,6 +103,30 @@ html.lenis body {
   }
 }
 
+@keyframes kenburns {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.18);
+  }
+}
+
+.kenburns {
+  animation: kenburns 9s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns {
+    animation: none;
+  }
+  .mouse-spot,
+  .mouse-dot,
+  .mouse-ring {
+    display: none;
+  }
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.28s ease, transform 0.28s ease;
@@ -56,10 +140,13 @@ html.lenis body {
 }
 
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-wide transition-all duration-300;
+  @apply inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium tracking-wide transition-all duration-300;
+}
+.btn-wine {
+  @apply bg-wine text-white shadow-soft hover:bg-wine-light;
 }
 .btn-gold {
-  @apply bg-gold text-navy hover:bg-gold-light shadow-soft;
+  @apply bg-gold text-navy shadow-soft hover:bg-gold-light;
 }
 .btn-navy {
   @apply bg-navy text-white hover:bg-navy-700;
@@ -68,11 +155,11 @@ html.lenis body {
   @apply border border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20;
 }
 .btn-outline {
-  @apply border border-navy/15 bg-white text-navy hover:border-gold hover:text-gold-dark;
+  @apply border border-navy/15 bg-white text-navy hover:border-wine hover:text-wine;
 }
 
 .eyebrow {
-  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-dark;
+  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-wine;
 }
 
 .container-page {
@@ -80,15 +167,15 @@ html.lenis body {
 }
 
 .gold-rule {
-  @apply h-px w-12 bg-gold;
+  @apply h-px w-12 bg-wine;
 }
 
 input,
 select,
 textarea {
-  @apply w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20;
+  @apply w-full rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm outline-none transition focus:border-wine focus:ring-2 focus:ring-wine/15;
 }
 
 label.field {
-  @apply mb-1.5 block text-xs font-medium uppercase tracking-wider text-mute;
+  @apply mb-1 block text-[10px] font-medium uppercase tracking-wider text-mute;
 }
