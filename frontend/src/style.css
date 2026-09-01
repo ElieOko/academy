@@ -28,62 +28,36 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-@media (pointer: fine) {
-  html.has-mouse,
-  html.has-mouse body,
-  html.has-mouse a,
-  html.has-mouse button,
-  html.has-mouse [role='button'] {
-    cursor: none;
-  }
-  html.has-mouse input,
-  html.has-mouse textarea,
-  html.has-mouse select {
-    cursor: text;
-  }
-}
-
 .mouse-spot {
   position: absolute;
-  width: 420px;
-  height: 420px;
-  margin-left: -210px;
-  margin-top: -210px;
+  width: 340px;
+  height: 340px;
+  margin-left: -170px;
+  margin-top: -170px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(196, 163, 90, 0.16) 0%, rgba(146, 43, 62, 0.05) 38%, transparent 70%);
-  mix-blend-mode: screen;
-  transition: opacity 0.3s ease;
-}
-
-.mouse-dot {
-  position: absolute;
-  top: -3.5px;
-  left: -3.5px;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #c4a35a;
-  transition: transform 0.2s ease;
+  background: radial-gradient(circle, rgba(196, 163, 90, 0.28) 0%, rgba(146, 43, 62, 0.1) 36%, transparent 70%);
+  mix-blend-mode: soft-light;
 }
 
 .mouse-ring {
   position: absolute;
-  top: -18px;
-  left: -18px;
-  width: 36px;
-  height: 36px;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
-  border: 1px solid rgba(196, 163, 90, 0.85);
-  transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, background 0.25s ease,
-    border-color 0.25s ease;
+  border: 1.5px solid rgba(196, 163, 90, 0.95);
+  box-shadow: 0 0 0 1px rgba(11, 31, 54, 0.15), 0 0 18px rgba(196, 163, 90, 0.35);
+  transition: width 0.22s ease, height 0.22s ease, top 0.22s ease, left 0.22s ease, background 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .mouse-ring.is-hover {
-  top: -28px;
-  left: -28px;
-  width: 56px;
-  height: 56px;
-  background: rgba(146, 43, 62, 0.12);
+  top: -26px;
+  left: -26px;
+  width: 52px;
+  height: 52px;
+  background: rgba(146, 43, 62, 0.14);
   border-color: #922b3e;
 }
 

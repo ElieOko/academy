@@ -176,7 +176,7 @@ const messages = {
     },
     privacy: {
       title: 'Politique de confidentialité',
-      body: 'Les informations collectées via les formulaires (nom, WhatsApp, e-mail, objectifs) servent uniquement au traitement de votre inscription ou de votre demande. Elles ne sont pas vendues. Vous pouvez demander leur modification ou leur suppression en écrivant à contact@acad-emy.com.',
+      body: "Les informations collectées via les formulaires (nom, WhatsApp, e-mail, objectifs) servent uniquement au traitement de votre inscription ou de votre demande. Elles ne sont pas vendues. Vous pouvez demander leur modification ou leur suppression en écrivant à contact{'@'}acad-emy.com.",
     },
     footer: {
       rights: 'Tous droits réservés.',
@@ -200,7 +200,7 @@ const messages = {
       loginLead: 'Pilotez les formations, les inscriptions et les contenus du centre depuis un espace unique.',
       loginHint: 'Identifiants professionnels réservés à l’équipe.',
       loginError: 'Identifiants incorrects.',
-      emailPlaceholder: 'prenom@acad-emy.com',
+      emailPlaceholder: "prenom{'@'}acad-emy.com",
       passwordPlaceholder: 'Mot de passe',
       email: 'E-mail',
       password: 'Mot de passe',
@@ -423,7 +423,7 @@ const messages = {
       loginLead: 'Manage programs, enrollments and centre content from a single workspace.',
       loginHint: 'Professional credentials reserved for the team.',
       loginError: 'Incorrect credentials.',
-      emailPlaceholder: 'name@acad-emy.com',
+      emailPlaceholder: "name{'@'}acad-emy.com",
       passwordPlaceholder: 'Password',
       email: 'Email',
       password: 'Password',
