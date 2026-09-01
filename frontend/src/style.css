@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0b1f36;
+  --gold: #c4a35a;
+  --cream: #f6f3ee;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-cream text-ink font-sans antialiased;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal.in {
+  animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-wide transition-all duration-300;
+}
+.btn-gold {
+  @apply bg-gold text-navy hover:bg-gold-light shadow-soft;
+}
+.btn-navy {
+  @apply bg-navy text-white hover:bg-navy-700;
+}
+.btn-ghost {
+  @apply border border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20;
+}
+.btn-outline {
+  @apply border border-navy/15 bg-white text-navy hover:border-gold hover:text-gold-dark;
+}
+
+.eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-dark;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+}
+
+.gold-rule {
+  @apply h-px w-12 bg-gold;
+}
+
+input,
+select,
+textarea {
+  @apply w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20;
+}
+
+label.field {
+  @apply mb-1.5 block text-xs font-medium uppercase tracking-wider text-mute;
+}
