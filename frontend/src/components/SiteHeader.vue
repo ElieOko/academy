@@ -46,8 +46,8 @@ watch(
   >
     <div class="mx-auto flex h-[68px] max-w-[92rem] items-center gap-3 px-4 md:px-6">
       <RouterLink to="/" class="flex shrink-0 items-center gap-2.5">
-        <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
-          <img src="/images/academy-mark.jpg" alt="" class="h-9 w-9 object-contain" />
+        <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
+          <img src="/images/academy-mark.jpg" alt="" class="h-10 w-10 object-contain" />
         </span>
         <span class="font-display text-[17px] font-semibold leading-none" :class="overHero ? 'text-white' : 'text-navy'">
           Acad’Emy
