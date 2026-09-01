@@ -17,6 +17,11 @@ export default {
           light: '#E8D5A3',
           dark: '#9A7A32',
         },
+        wine: {
+          DEFAULT: '#922B3E',
+          light: '#B23A51',
+          dark: '#721F30',
+        },
         cream: '#F6F3EE',
         ink: '#14181F',
         mute: '#5C6570',

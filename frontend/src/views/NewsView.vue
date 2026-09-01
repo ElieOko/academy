@@ -11,7 +11,7 @@ const catalog = useCatalog()
 <template>
   <main class="container-page pb-24 pt-28">
     <SectionTitle :title="t('news.title')" :lead="t('news.lead')" />
-    <div v-if="!catalog.news.length" class="mt-10 text-mute">{{ t('news.empty') }}</div>
+    <div v-if="!catalog.news.length" class="mt-10 flex flex-1 items-start text-mute">{{ t('news.empty') }}</div>
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       <RouterLink
         v-for="(n, i) in catalog.news"

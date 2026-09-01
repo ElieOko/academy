@@ -11,8 +11,9 @@ const catalog = useCatalog()
 <template>
   <main class="container-page pb-24 pt-28">
     <SectionTitle :title="t('calendar.title')" :lead="t('calendar.lead')" />
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <div v-if="catalog.sessions.length" class="mt-12 grid gap-6 md:grid-cols-3">
       <SessionCard v-for="s in catalog.sessions" :key="s.id" :session="s" :featured="s.is_highlighted" />
     </div>
+    <p v-else class="mt-12 text-mute">{{ t('empty.sessions') }}</p>
   </main>
 </template>

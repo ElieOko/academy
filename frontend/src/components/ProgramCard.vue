@@ -5,10 +5,12 @@ import { useI18n } from 'vue-i18n'
 import { ArrowUpRight } from '@lucide/vue'
 import type { Program } from '../types'
 import { loc, type Locale } from '../types'
+import { programCover } from '../lib/covers'
 
 const props = defineProps<{ program: Program }>()
 const { t, locale } = useI18n()
 const l = computed(() => locale.value as Locale)
+const cover = computed(() => programCover(props.program.slug, props.program.image_url))
 </script>
 
 <template>
@@ -17,8 +19,8 @@ const l = computed(() => locale.value as Locale)
     class="group overflow-hidden rounded-2xl bg-white shadow-soft transition duration-500 hover:-translate-y-1"
   >
     <div class="relative h-48 overflow-hidden">
-      <img :src="program.image_url" :alt="loc(program, l, 'title')" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-      <span class="absolute left-4 top-4 rounded-full bg-navy/85 px-3 py-1 text-[11px] font-semibold tracking-wider text-gold">
+      <img :src="cover" :alt="loc(program, l, 'title')" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+      <span class="absolute left-4 top-4 rounded-full bg-navy/85 px-3 py-1 text-[11px] font-semibold tracking-wider text-white">
         {{ program.code }}
       </span>
     </div>

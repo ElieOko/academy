@@ -20,7 +20,7 @@ const fee = computed(() => {
 <template>
   <article
     class="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy/8 bg-white p-6 shadow-soft transition duration-500 hover:-translate-y-1"
-    :class="featured ? 'ring-1 ring-gold/50' : ''"
+    :class="featured ? 'ring-1 ring-wine/40' : ''"
   >
     <div class="flex items-center justify-between gap-3">
       <span class="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-800">

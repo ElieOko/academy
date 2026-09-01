@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, watch } from 'vue'
-import { RouterView, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import Lenis from 'lenis'
 import SiteHeader from './components/SiteHeader.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import WhatsAppButton from './components/WhatsAppButton.vue'
+import MouseFollower from './components/MouseFollower.vue'
 import { useCatalog } from './stores'
 
 const route = useRoute()
 const catalog = useCatalog()
 const isAdmin = computed(() => route.path.startsWith('/admin'))
+const isAdminApp = computed(() => isAdmin.value && route.path !== '/admin/login')
 
 let lenis: Lenis | null = null
 
@@ -32,13 +34,16 @@ onUnmounted(() => lenis?.destroy())
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div class="flex min-h-svh flex-col">
+    <MouseFollower v-if="!isAdminApp" />
     <SiteHeader v-if="!isAdmin" />
-    <router-view v-slot="{ Component }">
-      <transition name="page" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <div class="flex flex-1 flex-col">
+      <router-view v-slot="{ Component }">
+        <transition name="page" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
     <SiteFooter v-if="!isAdmin" />
     <WhatsAppButton v-if="!isAdmin" />
   </div>

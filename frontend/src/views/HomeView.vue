@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { MessageCircle } from '@lucide/vue'
@@ -23,18 +23,48 @@ const whatsapp = computed(() => {
   return `https://wa.me/${n}`
 })
 
-const gallery = [
-  'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80',
-]
+const slides = ['/images/back-01.jpg', '/images/back-02.jpg', '/images/back-03.jpg']
+const gallery = ['/images/gallery-01.jpg', '/images/gallery-02.jpg', '/images/gallery-03.jpg']
+const slide = ref(0)
+const mx = ref(0)
+const my = ref(0)
+let timer = 0
+
+function onMove(e: MouseEvent) {
+  mx.value = (e.clientX / window.innerWidth - 0.5) * 28
+  my.value = (e.clientY / window.innerHeight - 0.5) * 18
+}
+
+onMounted(() => {
+  timer = window.setInterval(() => {
+    slide.value = (slide.value + 1) % slides.length
+  }, 6500)
+  window.addEventListener('mousemove', onMove, { passive: true })
+})
+
+onUnmounted(() => {
+  window.clearInterval(timer)
+  window.removeEventListener('mousemove', onMove)
+})
 </script>
 
 <template>
   <main>
     <section class="relative min-h-[100svh] overflow-hidden">
-      <img :src="gallery[0]" alt="" class="absolute inset-0 h-full w-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/40" />
+      <div
+        class="absolute -inset-10 will-change-transform"
+        :style="{ transform: `translate3d(${mx}px, ${my}px, 0)` }"
+      >
+        <img
+          v-for="(src, i) in slides"
+          :key="src"
+          :src="src"
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out"
+          :class="i === slide ? 'opacity-100 kenburns' : 'opacity-0'"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/72 to-navy/35" />
       <div class="container-page relative flex min-h-[100svh] flex-col justify-end pb-20 pt-32 md:justify-center md:pb-0">
         <p v-reveal class="eyebrow text-gold">{{ t('hero.kicker') }} · {{ t('parent') }}</p>
         <h1 v-reveal="80" class="mt-5 max-w-3xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
@@ -43,11 +73,22 @@ const gallery = [
         <p v-reveal="160" class="mt-6 max-w-xl text-lg text-white/80">{{ t('promise') }}</p>
         <p v-reveal="200" class="mt-2 max-w-xl text-white/65">{{ t('promiseLong') }}</p>
         <div v-reveal="260" class="mt-9 flex flex-col gap-3 sm:flex-row">
-          <RouterLink to="/formations" class="btn btn-gold">{{ t('cta.discover') }}</RouterLink>
+          <RouterLink to="/formations" class="btn btn-wine">{{ t('cta.discover') }}</RouterLink>
           <RouterLink to="/inscription" class="btn bg-white text-navy hover:bg-gold-light">{{ t('cta.enroll') }}</RouterLink>
           <a :href="whatsapp" target="_blank" class="btn btn-ghost">
             <MessageCircle :size="16" /> {{ t('cta.advisor') }}
           </a>
+        </div>
+        <div class="mt-10 flex items-center gap-2">
+          <button
+            v-for="(_, i) in slides"
+            :key="i"
+            type="button"
+            class="h-1.5 rounded-full transition-all"
+            :class="i === slide ? 'w-8 bg-wine' : 'w-3 bg-white/40'"
+            :aria-label="`Slide ${i + 1}`"
+            @click="slide = i"
+          />
         </div>
       </div>
     </section>
@@ -71,13 +112,14 @@ const gallery = [
           <div v-for="(p, i) in catalog.programs" :key="p.id" v-reveal="i * 60">
             <ProgramCard :program="p" />
           </div>
+          <p v-if="!catalog.programs.length" class="col-span-full text-mute">{{ t('empty.programs') }}</p>
         </div>
       </div>
     </section>
 
     <section class="bg-navy py-20 text-white">
       <div class="container-page">
-        <SectionTitle kicker="Acad’Emy" :title="t('sections.advantages')" />
+        <SectionTitle light kicker="Acad’Emy" :title="t('sections.advantages')" />
         <div class="mt-12 grid gap-8 md:grid-cols-4">
           <article v-for="n in 4" :key="n" v-reveal="n * 70" class="border-t border-gold/40 pt-6">
             <p class="font-display text-2xl text-gold">0{{ n }}</p>
@@ -103,8 +145,8 @@ const gallery = [
           </ol>
         </div>
         <div v-reveal class="grid grid-cols-2 gap-3">
-          <img :src="gallery[1]" alt="" class="h-72 w-full rounded-2xl object-cover" />
-          <img :src="gallery[2]" alt="" class="mt-10 h-72 w-full rounded-2xl object-cover" />
+          <img :src="gallery[0]" alt="" class="h-72 w-full rounded-2xl object-cover" />
+          <img :src="gallery[1]" alt="" class="mt-10 h-72 w-full rounded-2xl object-cover" />
         </div>
       </div>
     </section>
@@ -112,7 +154,7 @@ const gallery = [
     <section class="bg-white py-20">
       <div class="container-page">
         <SectionTitle :title="t('sections.upcoming')" />
-        <div class="mt-8 overflow-hidden rounded-2xl border border-navy/8">
+        <div v-if="catalog.sessions.length" class="mt-8 overflow-hidden rounded-2xl border border-navy/8">
           <div
             v-for="s in catalog.sessions"
             :key="s.id"
@@ -124,12 +166,13 @@ const gallery = [
             </div>
             <div class="flex flex-wrap items-center gap-3">
               <span class="text-sm font-semibold">{{ s.tuition_usd }} USD</span>
-              <RouterLink :to="{ path: '/inscription', query: { session: s.slug } }" class="btn btn-navy px-4 py-2 text-xs">
+              <RouterLink :to="{ path: '/inscription', query: { session: s.slug } }" class="btn btn-navy">
                 {{ locale === 'en' ? s.cta_en : s.cta_fr }}
               </RouterLink>
             </div>
           </div>
         </div>
+        <p v-else class="mt-8 text-mute">{{ t('empty.sessions') }}</p>
       </div>
     </section>
 
@@ -154,14 +197,14 @@ const gallery = [
     </section>
 
     <section class="relative overflow-hidden py-24">
-      <img :src="gallery[0]" alt="" class="absolute inset-0 h-full w-full object-cover" />
+      <img :src="gallery[2]" alt="" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-navy/85" />
       <div class="container-page relative text-center text-white">
         <p class="eyebrow text-gold">Acad’Emy</p>
         <h2 class="mt-4 font-display text-4xl md:text-5xl">{{ t('sections.final') }}</h2>
         <p class="mx-auto mt-4 max-w-xl text-white/70">{{ t('sections.finalLead') }}</p>
         <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <RouterLink to="/inscription" class="btn btn-gold">{{ t('cta.enroll') }}</RouterLink>
+          <RouterLink to="/inscription" class="btn btn-wine">{{ t('cta.enroll') }}</RouterLink>
           <a :href="whatsapp" target="_blank" class="btn btn-ghost">{{ t('cta.advisor') }}</a>
         </div>
       </div>
