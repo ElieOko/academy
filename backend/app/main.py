@@ -26,7 +26,7 @@ app = FastAPI(title="Acad'Emy API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.origins,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,6 +35,11 @@ app.add_middleware(
 app.include_router(public.router, prefix="/api")
 app.include_router(auth.router, prefix="/api/auth")
 app.include_router(admin.router, prefix="/api/admin")
+
+
+@app.get("/")
+def root():
+    return {"service": "Acad'Emy API", "docs": "/docs", "health": "/api/health"}
 
 
 @app.get("/api/health")

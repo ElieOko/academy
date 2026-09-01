@@ -12,7 +12,14 @@ class Settings(BaseSettings):
     secret_key: str
     admin_email: str = "admin@acad-emy.com"
     admin_password: str = "AcadEmy243!"
-    cors_origins: str = "http://127.0.0.1:4321,http://localhost:4321"
+    cors_origins: str = (
+        "http://127.0.0.1:4321,"
+        "http://localhost:4321,"
+        "http://acad-emy.com,"
+        "http://www.acad-emy.com,"
+        "https://acad-emy.com,"
+        "https://www.acad-emy.com"
+    )
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60 * 24 * 7
 

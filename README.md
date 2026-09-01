@@ -38,4 +38,15 @@ Accueil, À propos, Nos formations, Calendrier et inscriptions, Entreprises, Act
 
 ## Déploiement
 
-Le frontend Vue peut être déployé sur Vercel (`frontend/` comme racine, `npm run build`, dossier `dist`). L’API FastAPI doit tourner sur un hébergeur Python (Render, Railway, Fly.io, etc.) avec les variables d’environnement du fichier `.env.example`. En production, pointer `VITE` n’est pas nécessaire : configurer le reverse-proxy `/api` vers l’API, ou servir `frontend/dist` depuis FastAPI.
+Domaines de production :
+
+| Service | Domaine |
+| --- | --- |
+| Site (client Vue) | [https://acad-emy.com](https://acad-emy.com) |
+| API FastAPI | [https://backend.acad-emy.com](https://backend.acad-emy.com) |
+
+Le frontend Vue peut être déployé sur Vercel (`frontend/` comme racine, `npm run build`, dossier `dist`) avec le domaine `acad-emy.com` (et `www.acad-emy.com` en redirection). Le build de production appelle l’API sur `https://backend.acad-emy.com/api` via `VITE_API_URL`.
+
+L’API FastAPI doit tourner sur un hébergeur Python (Render, Railway, Fly.io, etc.) derrière `backend.acad-emy.com`, avec les variables d’environnement du fichier `backend/.env.example`. `CORS_ORIGINS` doit inclure `https://acad-emy.com` et `https://www.acad-emy.com`.
+
+Santé de l’API : [https://backend.acad-emy.com/api/health](https://backend.acad-emy.com/api/health).
