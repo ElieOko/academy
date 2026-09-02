@@ -61,7 +61,7 @@ async function submit() {
           <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm">
             <img src="/images/academy-mark.jpg" alt="" class="h-20 w-20 object-contain transition-transform scale-150" />
           </span>
-          <span class="font-display text-xl text-navy">Acad’Emy</span>
+          <span class="font-display text-xl text-navy">ACAD’EMY</span>
         </RouterLink>
         <p class="eyebrow">{{ t('admin.loginKicker') }}</p>
         <h2 class="mt-3 font-display text-3xl text-navy">{{ t('admin.login') }}</h2>

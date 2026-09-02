@@ -9,8 +9,8 @@ const href = computed(() => {
   const n = catalog.contact.whatsapp || '243810000243'
   const text =
     locale.value === 'en'
-      ? 'Hello Acad’Emy, I would like information about your programs.'
-      : 'Bonjour Acad’Emy, je souhaite des informations sur vos formations.'
+      ? 'Hello ACAD’EMY, I would like information about your programs.'
+      : 'Bonjour ACAD’EMY, je souhaite des informations sur vos formations.'
   return `https://wa.me/${n}?text=${encodeURIComponent(text)}`
 })
 </script>

@@ -119,7 +119,7 @@ onUnmounted(() => {
 
     <section class="bg-navy py-20 text-white">
       <div class="container-page">
-        <SectionTitle light kicker="Acad’Emy" :title="t('sections.advantages')" />
+        <SectionTitle light kicker="ACAD’EMY" :title="t('sections.advantages')" />
         <div class="mt-12 grid gap-8 md:grid-cols-4">
           <article v-for="n in 4" :key="n" v-reveal="n * 70" class="border-t border-gold/40 pt-6">
             <p class="font-display text-2xl text-gold">0{{ n }}</p>
@@ -200,7 +200,7 @@ onUnmounted(() => {
       <img :src="gallery[2]" alt="" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-navy/85" />
       <div class="container-page relative text-center text-white">
-        <p class="eyebrow text-gold">Acad’Emy</p>
+        <p class="eyebrow text-gold">ACAD’EMY</p>
         <h2 class="mt-4 font-display text-4xl md:text-5xl">{{ t('sections.final') }}</h2>
         <p class="mx-auto mt-4 max-w-xl text-white/70">{{ t('sections.finalLead') }}</p>
         <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

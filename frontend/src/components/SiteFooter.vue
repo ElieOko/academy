@@ -28,7 +28,7 @@ const links = computed(() => [
           <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white">
             <img src="/images/academy-mark.jpg" alt="" class="h-20 w-20 object-contain transition-transform scale-150" />
           </span>
-          <p class="font-display text-3xl">Acad’Emy</p>
+          <p class="font-display text-3xl">ACAD’EMY</p>
         </div>
         <p class="mt-4 max-w-md text-sm leading-relaxed text-white/70">
           {{ t('promiseLong') }}

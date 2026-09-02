@@ -4,14 +4,17 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [vue()],
+
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(import.meta.dirname, 'src'),
     },
   },
+
   server: {
     host: '0.0.0.0',
     port: 4321,
+
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:8765',
@@ -19,6 +22,7 @@ export default defineConfig({
       },
     },
   },
+
   preview: {
     host: '0.0.0.0',
     port: 4321,

@@ -71,7 +71,7 @@ async function submit() {
 
 <template>
   <main class="container-page max-w-3xl pb-24 pt-28">
-    <p class="eyebrow">Acad’Emy</p>
+    <p class="eyebrow">ACAD’EMY</p>
     <h1 class="mt-3 font-display text-4xl text-navy md:text-5xl">{{ t('enroll.title') }}</h1>
     <p class="mt-3 text-mute">{{ t('enroll.lead') }}</p>
 

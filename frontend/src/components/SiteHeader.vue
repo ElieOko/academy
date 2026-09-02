@@ -50,7 +50,7 @@ watch(
           <img src="/images/academy-mark.jpg" alt=""  class="h-20 w-20 object-contain transition-transform scale-150" />
         </span>
         <span class="font-display text-[17px] font-semibold leading-none" :class="overHero ? 'text-white' : 'text-navy'">
-          Acad’Emy
+          ACAD’EMY
         </span>
       </RouterLink>
 

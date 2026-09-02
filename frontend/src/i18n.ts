@@ -2,11 +2,11 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
   fr: {
-    brand: "Acad’Emy",
+    brand: "ACAD’EMY",
     slogan: 'Learn. Build. Lead.',
     promise: 'Des compétences concrètes pour construire votre avenir.',
     promiseLong:
-      'Acad’Emy vous forme aux compétences linguistiques, numériques, entrepreneuriales et professionnelles qui font la différence.',
+      'ACAD’EMY vous forme aux compétences linguistiques, numériques, entrepreneuriales et professionnelles qui font la différence.',
     parent: 'Filiale de LawApp Group50',
     nav: {
       home: 'Accueil',
@@ -34,12 +34,12 @@ const messages = {
       open: 'Inscriptions ouvertes — Sessions d’anglais 2026',
     },
     englishBanner:
-      'Développez votre aisance en anglais grâce à des formations pratiques, structurées et orientées vers la communication réelle. Choisissez votre niveau ou rejoignez l’Acad’Emy Speaking Lab pour pratiquer l’anglais chaque samedi dans une ambiance dynamique.',
+      'Développez votre aisance en anglais grâce à des formations pratiques, structurées et orientées vers la communication réelle. Choisissez votre niveau ou rejoignez l’ACAD’EMY Speaking Lab pour pratiquer l’anglais chaque samedi dans une ambiance dynamique.',
     sections: {
       openSessions: 'Sessions d’anglais ouvertes',
       programs: 'Six formations pour avancer',
       programsLead: 'Des parcours courts, concrets, pensés pour être utilisés dès le lendemain.',
-      advantages: 'Pourquoi Acad’Emy',
+      advantages: 'Pourquoi ACAD’EMY',
       method: 'La méthode',
       methodLead: 'Apprendre, pratiquer, appliquer.',
       upcoming: 'Prochaines sessions',
@@ -87,7 +87,7 @@ const messages = {
       },
       approachT: 'Approche pédagogique',
       approach:
-        'Les formations Acad’Emy combinent des explications claires, des démonstrations, des exercices, des mises en situation, des études de cas et des travaux pratiques. L’objectif est que chaque apprenant puisse utiliser ses acquis dans des situations concrètes.',
+        'Les formations ACAD’EMY combinent des explications claires, des démonstrations, des exercices, des mises en situation, des études de cas et des travaux pratiques. L’objectif est que chaque apprenant puisse utiliser ses acquis dans des situations concrètes.',
       galleryT: 'Le centre, en images',
     },
     programs: {
@@ -118,7 +118,7 @@ const messages = {
       title: 'Entreprises',
       lead: 'Des formations sur mesure pour vos équipes.',
       intro:
-        'Acad’Emy conçoit des programmes de renforcement de capacités pour entreprises, institutions, ONG et administrations. Anglais, communication, intelligence artificielle, bureautique et entrepreneuriat — adaptés à votre contexte, en présentiel, en ligne ou en hybride.',
+        'ACAD’EMY conçoit des programmes de renforcement de capacités pour entreprises, institutions, ONG et administrations. Anglais, communication, intelligence artificielle, bureautique et entrepreneuriat — adaptés à votre contexte, en présentiel, en ligne ou en hybride.',
       f1t: 'Diagnostic court',
       f1d: 'Nous clarifions le besoin, le public et le niveau avant de proposer un format.',
       f2t: 'Programme sur mesure',
@@ -131,7 +131,7 @@ const messages = {
       audience: 'Public visé',
       topics: 'Thématiques souhaitées',
       message: 'Précisions',
-      thanks: 'Demande reçue. Un conseiller Acad’Emy vous contacte rapidement.',
+      thanks: 'Demande reçue. Un conseiller ACAD’EMY vous contacte rapidement.',
     },
     news: {
       title: 'Actualités',
@@ -171,7 +171,7 @@ const messages = {
       submit: 'Envoyer mon inscription',
       thanksTitle: 'Inscription reçue',
       thanks:
-        'Merci. L’équipe Acad’Emy a bien reçu votre demande et vous contacte rapidement par WhatsApp ou e-mail pour confirmer votre place.',
+        'Merci. L’équipe ACAD’EMY a bien reçu votre demande et vous contacte rapidement par WhatsApp ou e-mail pour confirmer votre place.',
       another: 'Nouvelle inscription',
     },
     privacy: {
@@ -196,7 +196,7 @@ const messages = {
     admin: {
       login: 'Connexion équipe',
       loginKicker: 'Espace interne',
-      loginTitle: 'L’équipe Acad’Emy.',
+      loginTitle: 'L’équipe ACAD’EMY.',
       loginLead: 'Pilotez les formations, les inscriptions et les contenus du centre depuis un espace unique.',
       loginHint: 'Identifiants professionnels réservés à l’équipe.',
       loginError: 'Identifiants incorrects.',
@@ -225,11 +225,11 @@ const messages = {
     },
   },
   en: {
-    brand: "Acad’Emy",
+    brand: "ACAD’EMY",
     slogan: 'Learn. Build. Lead.',
     promise: 'Practical skills to build what comes next.',
     promiseLong:
-      'Acad’Emy trains you in the language, digital, entrepreneurial and professional skills that actually move a career.',
+      'ACAD’EMY trains you in the language, digital, entrepreneurial and professional skills that actually move a career.',
     parent: 'A LawApp Group50 company',
     nav: {
       home: 'Home',
@@ -257,12 +257,12 @@ const messages = {
       open: 'Enrollment open — English sessions 2026',
     },
     englishBanner:
-      'Build your English fluency with practical, structured training focused on real communication. Choose your level or join Acad’Emy Speaking Lab to practise English every Saturday in a lively setting.',
+      'Build your English fluency with practical, structured training focused on real communication. Choose your level or join ACAD’EMY Speaking Lab to practise English every Saturday in a lively setting.',
     sections: {
       openSessions: 'Open English sessions',
       programs: 'Six programs to move forward',
       programsLead: 'Short, concrete pathways designed to be used the very next day.',
-      advantages: 'Why Acad’Emy',
+      advantages: 'Why ACAD’EMY',
       method: 'The method',
       methodLead: 'Learn. Practise. Apply.',
       upcoming: 'Upcoming sessions',
@@ -310,7 +310,7 @@ const messages = {
       },
       approachT: 'Teaching approach',
       approach:
-        'Acad’Emy programs combine clear explanations, demonstrations, exercises, role-plays, case studies and practical work. The aim is that every learner can use what they gained in concrete situations.',
+        'ACAD’EMY programs combine clear explanations, demonstrations, exercises, role-plays, case studies and practical work. The aim is that every learner can use what they gained in concrete situations.',
       galleryT: 'The centre, in pictures',
     },
     programs: {
@@ -341,7 +341,7 @@ const messages = {
       title: 'Organizations',
       lead: 'Tailored training for your teams.',
       intro:
-        'Acad’Emy designs capacity-building programs for companies, institutions, NGOs and administrations. English, communication, AI, office tools and entrepreneurship — adapted to your context, on-site, online or hybrid.',
+        'ACAD’EMY designs capacity-building programs for companies, institutions, NGOs and administrations. English, communication, AI, office tools and entrepreneurship — adapted to your context, on-site, online or hybrid.',
       f1t: 'Short diagnosis',
       f1d: 'We clarify the need, the audience and the level before proposing a format.',
       f2t: 'Tailored program',
@@ -354,7 +354,7 @@ const messages = {
       audience: 'Target audience',
       topics: 'Topics requested',
       message: 'Details',
-      thanks: 'Request received. An Acad’Emy advisor will contact you shortly.',
+      thanks: 'Request received. An ACAD’EMY advisor will contact you shortly.',
     },
     news: {
       title: 'News',
@@ -394,7 +394,7 @@ const messages = {
       submit: 'Submit my enrollment',
       thanksTitle: 'Enrollment received',
       thanks:
-        'Thank you. The Acad’Emy team has received your request and will contact you shortly by WhatsApp or email to confirm your place.',
+        'Thank you. The ACAD’EMY team has received your request and will contact you shortly by WhatsApp or email to confirm your place.',
       another: 'New enrollment',
     },
     privacy: {
@@ -419,7 +419,7 @@ const messages = {
     admin: {
       login: 'Staff sign in',
       loginKicker: 'Internal access',
-      loginTitle: 'The Acad’Emy team.',
+      loginTitle: 'The ACAD’EMY team.',
       loginLead: 'Manage programs, enrollments and centre content from a single workspace.',
       loginHint: 'Professional credentials reserved for the team.',
       loginError: 'Incorrect credentials.',
