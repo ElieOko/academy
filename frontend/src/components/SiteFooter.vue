@@ -26,7 +26,7 @@ const links = computed(() => [
       <div class="md:col-span-2">
         <div class="flex items-center gap-3">
           <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white">
-            <img src="/images/academy-mark.jpg" alt="" class="h-10 w-10 object-contain" />
+            <img src="/images/academy-mark.jpg" alt="" class="h-20 w-20 object-contain transition-transform scale-150" />
           </span>
           <p class="font-display text-3xl">Acad’Emy</p>
         </div>

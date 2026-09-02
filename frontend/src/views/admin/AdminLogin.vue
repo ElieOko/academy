@@ -34,9 +34,12 @@ async function submit() {
       <img src="/images/back-01.jpg" alt="" class="absolute inset-0 h-full w-full object-cover kenburns" />
       <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/75 to-navy/45" />
       <div class="relative z-10 flex h-full flex-col justify-between p-10 text-white">
-        <RouterLink to="/" class="inline-flex w-fit items-center gap-3 rounded-2xl bg-white px-3 py-2 shadow-soft">
-          <img src="/images/academy-logo.jpg" alt="Acad’Emy" class="h-16 w-auto object-contain" />
-        </RouterLink>
+        <RouterLink to="/" class="flex shrink-0 items-center gap-2.5">
+        <span class="flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
+          <img src="/images/academy-logo.jpg" alt=""  class="h-20 w-20 object-contain transition-transform scale-150" />
+        </span>
+
+      </RouterLink>
         <div class="max-w-md">
           <p class="eyebrow text-gold">{{ t('admin.loginKicker') }}</p>
           <h1 class="mt-4 font-display text-5xl leading-tight">{{ t('admin.loginTitle') }}</h1>
@@ -56,7 +59,7 @@ async function submit() {
       <form class="relative w-full max-w-[380px]" @submit.prevent="submit">
         <RouterLink to="/" class="mb-8 flex items-center gap-2 lg:hidden">
           <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm">
-            <img src="/images/academy-mark.jpg" alt="" class="h-9 w-9 object-contain" />
+            <img src="/images/academy-mark.jpg" alt="" class="h-20 w-20 object-contain transition-transform scale-150" />
           </span>
           <span class="font-display text-xl text-navy">Acad’Emy</span>
         </RouterLink>
